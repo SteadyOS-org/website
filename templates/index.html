@@ -4,7 +4,7 @@
         <title>SteadyOS</title>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="{{ url_for('static', filename='images/logo-website.png') }}" type="image/png">
+        <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/favicon.png') }}">
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet"/>
@@ -63,6 +63,11 @@
                 transition: 0.2s;
             }
 
+            nav img {
+                width: auto;
+                height: 60px;
+            }
+
             nav a:hover {
                 color: #bbbbbb;
             }
@@ -106,7 +111,7 @@
                 padding-top: 40px;
                 padding-bottom: 40px;
                 width: 100%;
-                height: 200px;
+                height: fit-content;
                 background-color: #000000;
             }
 
@@ -148,12 +153,29 @@
                 font-size: 1.5rem;
             }
 
+            #footer p {
+                margin-left: auto;
+                margin-right: auto;
+                width: 50%;
+                color: #eeeeee;
+                font-size: 1.125rem;
+                text-align: center;
+            }
+
+            #footer span {
+                font-weight: 800;
+            }
+
             @media (max-width: 900px) {
                 .section {
                     width: 80%;
                 }
 
                 .section p {
+                    width: 100%;
+                }
+
+                #footer p {
                     width: 100%;
                 }
             }
@@ -163,7 +185,7 @@
     <body>
         <nav>
             <div id="nav-left">
-                <a href="/">SteadyOS</a>
+                <a href="/"><img src="{{ url_for('static', filename='images/logo-light.png') }}"></a>
             </div>
             <div id="nav-right">
                 <a href="#divider-goal">Goal</a>
@@ -218,6 +240,10 @@
             <div id="footer-links">
                 <a href="https://github.com/SteadyOS-org" target="_blank" rel="noopener noreferrer"><i class="fa fa-github"></i>GitHub</a>
             </div>
+            <p><span id="name">SteadyOS</span></p>
+            <p>"The friendly operating system"</p>
+            <p>Copyright © 2026 Silly Engineering</p>
+            <p>All rights reserved.</p>
         </div>
     </body>
 </html>
