@@ -82,9 +82,49 @@
             }
 
             #banner {
+                display: flex;
                 margin-top: 80px;
-                width: 100%;
+                margin-left: auto;
+                margin-right: auto;
+                width: 80%;
                 height: calc(100vh - 80px);
+                align-items: center;
+                justify-content: center;
+                gap: 100px;
+            }
+
+            #banner img {
+                width: 800px;
+                height: auto;
+                border-radius: 8px;
+            }
+
+            #banner p:not(:last-of-type) {
+                display: block;
+                color: #eeeeee;
+                font-size: 1.125rem;
+            }
+
+            #note {
+                margin-top: 20px;
+                color: #eeeeee;
+                font-size: 0.875rem;
+            }
+
+            #banner a {
+                display: block;
+                padding: 14px;
+                width: fit-content;
+                color: #eeeeee;
+                background-color: #0090e3;
+                border-radius: 8px;
+                text-decoration: none;
+                text-align: center;
+                font-size: 1.125rem;
+            }
+
+            #banner a:hover {
+                background-color: #0068bb;
             }
 
             .section {
@@ -168,6 +208,15 @@
             }
 
             @media (max-width: 900px) {
+                #banner {
+                    width: 90%;
+                    flex-direction: column;
+                }
+
+                #banner img {
+                    width: 98%;
+                }
+
                 .section {
                     width: 90%;
                 }
@@ -194,7 +243,14 @@
             </div>
         </nav>
 
-        <div id="banner"></div>
+        <div id="banner">
+            <img src="{{ url_for('static', filename='images/desktop.png') }}">
+            <div id="banner-text">
+                <p>SteadyOS is a user-friendly OS built on top of Ubuntu to give users a safe and comfortable computing environment.</p>
+                <a href="https://github.com/SteadyOS-org" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <p id="note">* SteadyOS and Haven are alpha software, use them at your own risk.</p>
+            </div>
+        </div>
 
         <div class="divider" id="divider-goal"></div>
 
@@ -221,6 +277,11 @@
 
         <div class="section" id="features">
             <h2>Features</h2>
+            <p>
+                Using Qt and Wayland SteadyOS provides users with Haven, a comfortable
+                and easy-to-use desktop environment that aims to remove the need for
+                the command line almost entirely.
+            </p>
             <p>
                 While SteadyOS is still a proof of concept, it aims to have all
                 of the basic applications the general user would expect: a
